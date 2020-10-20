@@ -68,7 +68,8 @@ function FitShapes(Shapes, Board, BoardX, BoardY, ShapeList)
             if(++BoardX >= Board.Width){
                 BoardX=0;
                 if(++BoardY >= Board.Height){
-                    Debug("OUT OF SPACES!?");
+                    // Debug("OUT OF SPACES!?");
+                    self.postMessage({'MsgType': "solution", 'Board': JSON.stringify(Board)});
                     return;
                 }
             }
